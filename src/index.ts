@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-export const humanReadableDate = (date?: Date | undefined) => {
+export const humanReadableDate = (date?: Date) => {
   if (!!date) {
     if (dayjs().diff(date, "second") < 60) {
       return `${dayjs().diff(date, "second")} секундын өмнө`;
