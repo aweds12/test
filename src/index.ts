@@ -1,6 +1,8 @@
 import dayjs from "dayjs";
 
-export { isTokenExpired } from "./token-expiration-checker";
+import isTokenExpired from "./token-expiration-checker";
+
+module.exports = [isTokenExpired];
 
 export const humanReadableDate = (date?: Date) => {
   if (!!date) {
