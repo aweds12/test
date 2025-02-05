@@ -1,4 +1,4 @@
-function isTokenExpired(token: string) {
+export function tokenExpired(token: string) {
   const parsedToken = parseToken(token);
   if (parsedToken) {
     return new Date(Date.now()) > new Date(parsedToken.exp * 1000);
@@ -6,8 +6,6 @@ function isTokenExpired(token: string) {
     return true;
   }
 }
-
-export default isTokenExpired;
 
 const parseToken = (token: string) => {
   try {
