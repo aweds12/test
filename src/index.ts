@@ -1,14 +1,20 @@
-export function setToken(token: string = ""): void {
-  if (process.client) {
-    document.cookie = `token=${token}`;
-  }
-}
+export const humanReadableDate = (date: string | undefined) => {
+  const dayjs = require("dayjs");
 
-export function useToken(): string {
-  if (process.client) {
-    const cookies = document.cookie.split("; ");
-    const tokenCookie = cookies.find((cookie) => cookie.startsWith("token="));
-    return tokenCookie ? tokenCookie.split("=")[1] : "";
+  if (date) {
+    if (dayjs().diff(date, "second") < 60) {
+      return `${dayjs().diff(date, "second")} секундын өмнө`;
+    } else if (dayjs().diff(date, "minute") < 60) {
+      return `${dayjs().diff(date, "minute")} минутын өмнө`;
+    } else if (dayjs().diff(date, "hour") < 24) {
+      return `${dayjs().diff(date, "hour")} цагийн өмнө`;
+    } else if (
+      dayjs().add(-1, "day").format("YYYY-MM-DD") ==
+      dayjs().format("YYYY-MM-DD")
+    ) {
+      return "Өчигдөр";
+    } else {
+      return date;
+    }
   }
-  return "";
-}
+};
