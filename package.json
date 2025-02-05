@@ -1,6 +1,6 @@
 {
   "name": "@aweds12/package",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "package test",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,6 +15,7 @@
   "author": "aweds12",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^22.13.1",
     "typescript": "^5.7.3"
   }
 }
