@@ -1,5 +1,7 @@
 import dayjs from "dayjs";
 
+export { isTokenExpired } from "./token-expiration-checker";
+
 export const humanReadableDate = (date?: Date) => {
   if (!!date) {
     if (dayjs().diff(date, "second") < 60) {
