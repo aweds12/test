@@ -1,4 +1,12 @@
 import dayjs from "dayjs";
+import NumberSpinner from "./number-spinner.vue";
+
+export default {
+  install(app: any) {
+    app.component("NumberSpinner", NumberSpinner);
+  },
+};
+export { NumberSpinner };
 
 export function isTokenExpired(token: string) {
   return isTokenExpired(token);
